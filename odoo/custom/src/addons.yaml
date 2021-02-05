@@ -1,0 +1,99 @@
+# Base profile
+odoo-profiles:
+  - profile_base
+  - profile_sale_crm
+  - profile_stock_management
+  - profile_stock_management_purchase
+akretion-usability:
+  - base_partner_ref
+  - base_usability
+  - eradicate_quick_create
+  - partner_tree_default
+  - product_usability
+  - sale_product_tree_default
+  - sale_purchase_no_product_template_menu
+  - sale_quotation_title
+  - sale_usability
+itprojects-misc-addons:
+  - auth_signup_confirmation
+  - auth_signup_confirmation_crm
+  - attachment_large_object
+  - base_import_map
+  - base_session_store_psql
+  - crm_next_action
+  - ir_attachment_force_storage
+  - project_timelog
+  - reminder_base
+  - reminder_crm_next_action
+  - reminder_crm_next_action_time
+  - reminder_task_deadline
+  - res_partner_phone
+  - theme_kit
+  - web_debranding
+  - web_sessions_management
+
+# OCA https://github.com/OCA/
+crm:
+  - crm_claim
+  - crm_claim_code
+  - crm_claim_type
+  - crm_phonecall
+  - crm_phonecall_summary_predefined
+l10n-ethiopia:
+  - l10n_et_toponym
+partner-contact:
+  - partner_vat_unique
+product-attribute:
+  - packaging_uom
+  - product_code_unique
+server-backend:
+  - base_user_role
+server-brand:
+  - disable_odoo_online
+server-tools:
+  - auditlog
+  - base_view_inheritance_extension
+  - scheduler_error_mailer
+server-ux:
+  - barcode_action
+  - base_technical_features
+  - base_tier_validation
+  - base_tier_validation_formula
+  - date_range
+  - mass_editing
+stock-logistics-reporting:
+  - stock_report_quantity_by_location
+stock-logistics-warehouse:
+  - stock_demand_estimate
+  - stock_inventory_chatter
+  - stock_inventory_discrepancy
+  - stock_inventory_lockdown
+  - stock_inventory_verification_request
+  - stock_mts_mto_rule
+  - stock_orderpoint_move_link
+  - stock_orderpoint_purchase_link
+  - stock_packaging
+  - stock_request
+  - stock_request_purchase
+  - stock_request_tier_validation
+  - stock_warehouse_orderpoint_stock_info
+  - stock_warehouse_orderpoint_stock_info_unreserved
+stock-logistics-workflow:
+  - stock_no_negative
+  - stock_picking_show_backorder
+web:
+  - web_advanced_search
+  - web_dialog_size
+  - web_export_view
+  - web_m2x_options
+  - web_responsive
+  - web_searchbar_full_width
+  - web_widget_x2many_2d_matrix
+---
+# Enable demo ribbon only for devel and test environments
+ONLY:
+  PGDATABASE: # This environment variable must exist and be in the list
+    - devel
+    - test
+web:
+  - web_environment_ribbon

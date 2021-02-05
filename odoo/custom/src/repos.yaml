@@ -1,0 +1,128 @@
+# See https://github.com/Tecnativa/doodba#optodoocustomsrcreposyaml
+./odoo:
+    defaults:
+        # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
+        # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
+        # for a sane value of 100 commits)
+        depth: $DEPTH_MERGE
+    remotes:
+        ocb: https://github.com/OCA/OCB.git
+        trevi: https://github.com/trevi-software/OCB.git
+        odoo: https://github.com/odoo/odoo.git
+        openupgrade: https://github.com/OCA/OpenUpgrade.git
+    target:
+        ocb $ODOO_VERSION
+    merges:
+        - ocb $ODOO_VERSION
+        - trevi refs/pull/1/head
+        - trevi refs/pull/2/head
+        # Example of a merge of the PR with the number <PR>
+        # - oca refs/pull/<PR>/head
+        #
+
+l10n-ethiopia:
+  defaults:
+    depth: $DEPTH_MERGE
+  remotes:
+    origin: https://github.com/OCA/l10n-ethiopia.git
+    trevi: https://github.com/trevi-software/l10n-ethiopia
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - trevi refs/pull/1/head
+
+partner-contact:
+  defaults:
+    depth: $DEPTH_MERGE
+  remotes:
+    origin: https://github.com/OCA/partner-contact.git
+    trevi: https://github.com/trevi-software/partner-contact.git
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - trevi refs/pull/1/head
+
+server-backend:
+  defaults:
+    depth: $DEPTH_MERGE
+  remotes:
+    origin: https://github.com/OCA/server-backend.git
+    trevi: https://github.com/trevi-software/server-backend.git
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - trevi refs/pull/1/head
+
+server-brand:
+  defaults:
+    depth: $DEPTH_MERGE
+  remotes:
+    origin: https://github.com/OCA/server-brand.git
+    trevi: https://github.com/trevi-software/server-brand.git
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - trevi refs/pull/1/head
+
+server-tools:
+  defaults:
+    depth: $DEPTH_MERGE
+  remotes:
+    origin: https://github.com/OCA/server-tools.git
+    trevi: https://github.com/trevi-software/server-tools.git
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - origin refs/pull/1529/head # Migration to 12.0 of base_view_inheritance_extension
+    - trevi refs/pull/1/head
+
+server-ux:
+  defaults:
+    depth: $DEPTH_MERGE
+  remotes:
+    origin: https://github.com/OCA/server-ux.git
+    trevi: https://github.com/trevi-software/server-ux.git
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - trevi refs/pull/1/head
+
+web:
+  defaults:
+    depth: $DEPTH_MERGE
+  remotes:
+    origin: https://github.com/OCA/web.git
+    trevi: https://github.com/trevi-software/web.git
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - trevi refs/pull/1/head
+
+odoo-profiles:
+  defaults:
+    depth: $DEPTH_MERGE
+  remotes:
+    origin: https://github.com/trevi-software/odoo-profiles.git
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+
+akretion-usability:
+  defaults:
+    depth: $DEPTH_MERGE
+  remotes:
+    origin: https://github.com/akretion/odoo-usability.git
+    trevi: https://github.com/trevi-software/odoo-usability.git
+  target: origin $ODOO_VERSION
+  merges:
+    - origin $ODOO_VERSION
+    - trevi refs/pull/2/head
+
+itprojects-misc-addons:
+  defaults:
+    depth: $DEPTH_MERGE
+  remotes:
+    itprojects: https://github.com/it-projects-llc/misc-addons.git
+  target: origin $ODOO_VERSION
+  merges:
+    - itprojects $ODOO_VERSION
